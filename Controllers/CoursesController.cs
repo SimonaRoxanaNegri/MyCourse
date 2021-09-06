@@ -11,7 +11,7 @@ namespace MyCourse.Controllers
 
         public IActionResult Detail(string id)
         {
-            return Content($"Pagina Detail, con il seguente {id}");
+            return Content($"Pagina Detail, con il seguente id: {id}");
         }
     }
 }
