@@ -7,7 +7,7 @@ namespace MyCourse
 
         public IActionResult Index()
         {
-            return Content("Index della Home");
+            return View();
         }
 
     }
