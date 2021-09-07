@@ -7,6 +7,7 @@ namespace MyCourse
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
