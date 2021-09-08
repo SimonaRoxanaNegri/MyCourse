@@ -6,10 +6,10 @@
 @for (int i = 1; i <= 10; i++)
 {
 
-
-    <div class="row">
+    <hr>
+    <div class="row d-flex align-items-center">
         <div class="col-md-1">
-            <img class="" width="50" src="~/logo.svg" alt="logo">
+            <img class="" width="50" src="~/logo.svg">
         </div>
 
         <div class="col-md-5 ">
@@ -17,20 +17,21 @@
             <author>di Nome Autore</author>
         </div>
 
-        <div class="col-md-2 ">
+        <div class="col-md-2 rating">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
+
         </div>
 
-        <div class="col-md-2 ">
+        <div class="col-md-2 price">
             EUR 10,99 <br /> <s>EUR 12,99</s>
         </div>
 
         <div class="col-md-2 ">
-            <a class="btn btn-outline-primary" asp-action="Detail" asp-route-id="5">Dettagli</a>
+            <a class="btn btn-outline-primary" asp-action="Detail" asp-route-id="5">Dettaglio</a>
         </div>
 
     </div>
