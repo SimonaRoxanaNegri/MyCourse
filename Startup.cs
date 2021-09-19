@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using MyCourse.Models.Services.Application;
 
 namespace MyCourse
 {
@@ -18,6 +19,9 @@ namespace MyCourse
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //AddTransient: crea una nuova istanza del servizio ogni volta che un componente ne ha bisogno e la distrugge dopo che è stata usata
+            services.AddTransient<ICourseService, CourseService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,10 +33,10 @@ namespace MyCourse
                 app.UseDeveloperExceptionPage();
 
                 //aggiorniamo un file per notificare al BrowserSync che deve aggiornare la pagina
-                lifetime.ApplicationStarted.Register(() => 
+                lifetime.ApplicationStarted.Register(() =>
                 {
-                    string filePath = Path.Combine(env.ContentRootPath,"bin/reload.txt");
-                       File.WriteAllText(filePath, DateTime.Now.ToString());
+                    string filePath = Path.Combine(env.ContentRootPath, "bin/reload.txt");
+                    File.WriteAllText(filePath, DateTime.Now.ToString());
                 });
 
             }
